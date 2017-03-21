@@ -23,8 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $rooms = Room::with('user')->get();
-        $users = User::with('room')->get();
-        return view('home', compact('users'));
+        $students = User::where('type', 'S')->with('room')->get();
+        return view('home', compact('students'));
     }
 }

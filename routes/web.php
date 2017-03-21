@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => '/filter'], function () {
+    Route::post('/name', 'FilterController@name');
+    Route::post('/room', 'FilterController@room');
+});
