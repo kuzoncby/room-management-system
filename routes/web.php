@@ -19,6 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::group(['prefix' => '/student'], function () {
+    Route::get('/create', 'StudentController@create');
+    Route::get('/{id}', 'StudentController@get');
+    Route::post('/delete', 'StudentController@delete');
+});
+
 Route::group(['prefix' => '/filter'], function () {
     Route::post('/name', 'FilterController@name');
     Route::post('/room', 'FilterController@room');

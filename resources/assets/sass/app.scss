@@ -1,8 +1,11 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 // Variables
 @import "variables";
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Material Design
+@import "node_modules/bootstrap-material-design/dist/css/bootstrap-material-design";
 // Pingendo
 @import "pingendo-custom";
