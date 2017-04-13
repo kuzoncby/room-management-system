@@ -12168,8 +12168,6 @@
 //
 //
 //
-//
-//
 
         /* harmony default export */
         __webpack_exports__["default"] = ({
@@ -12184,9 +12182,10 @@
                 var _this = this;
 
                 this.message = '载入中...';
-                var url = '/v1/users';
+                var url = '/v1/rooms';
                 this.$http.get(url).then(function (response) {
                     _this.rooms = response.data;
+                    _this.loading = false;
                     console.log(_this.rooms);
                 });
             }
@@ -32653,28 +32652,30 @@
                     staticClass: "container"
                 }, [_c('div', {
                     staticClass: "row"
-                }, [_c('div', {
-                    staticClass: "col-md-3"
-                }, [(_vm.loading) ? _c('div', [_c('div', {
-                    staticClass: "loader"
-                }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(_vm.message))])]) : _c('div', [_c('img', {
-                    staticClass: "img-responsive",
-                    attrs: {
-                        "src": "http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
-                    }
-                }), _vm._v(" "), _c('h2', [_vm._v("101")]), _vm._v(" "), _c('ul', {
-                    staticClass: "list-group"
-                }, [_c('li', {
-                    staticClass: "list-group-item"
-                }, [_vm._v("Cras justo odio")]), _vm._v(" "), _c('li', {
-                    staticClass: "list-group-item"
-                }, [_vm._v("Dapibus ac facilisis in")]), _vm._v(" "), _c('li', {
-                    staticClass: "list-group-item"
-                }, [_vm._v("Morbi leo risus")]), _vm._v(" "), _c('li', {
-                    staticClass: "list-group-item"
-                }, [_vm._v("Porta ac consectetur ac")]), _vm._v(" "), _c('li', {
-                    staticClass: "list-group-item"
-                }, [_vm._v("Vestibulum at eros")])])])])])])])
+                }, _vm._l((_vm.rooms), function (room) {
+                    return _c('div', {
+                        staticClass: "col-md-3"
+                    }, [(_vm.loading) ? _c('div', [_c('div', {
+                        staticClass: "loader"
+                    }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(_vm.message))])]) : _c('div', [_c('div', {
+                        staticClass: "well"
+                    }, [_c('img', {
+                        staticClass: "img-responsive",
+                        attrs: {
+                            "src": "http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
+                        }
+                    }), _vm._v(" "), _c('h2', {
+                        domProps: {
+                            "textContent": _vm._s(room.room)
+                        }
+                    }), _vm._v(" "), _c('ul', {
+                        staticClass: "list-group"
+                    }, _vm._l((room.user), function (user) {
+                        return _c('li', {
+                            staticClass: "list-group-item"
+                        }, [_vm._v(_vm._s(user.name))])
+                    }))])])])
+                }))])])
             }, staticRenderFns: []
         }
         module.exports.render._withStripped = true

@@ -2,22 +2,20 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3" v-for="room in rooms">
                     <div v-if="loading">
                         <div class="loader"></div>
                         <h1>{{ message }}</h1>
                     </div>
                     <div v-else>
-                        <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
-                             class="img-responsive">
-                        <h2>101</h2>
-                        <ul class="list-group">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                            <li class="list-group-item">Porta ac consectetur ac</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
+                        <div class="well">
+                            <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
+                                 class="img-responsive">
+                            <h2 v-text="room.room"></h2>
+                            <ul class="list-group">
+                                <li class="list-group-item" v-for="user in room.user">{{ user.name }}</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -35,9 +33,10 @@
         },
         mounted() {
             this.message = '载入中...';
-            var url = '/v1/users';
+            var url = '/v1/rooms';
             this.$http.get(url).then((response) => {
                 this.rooms = response.data;
+                this.loading = false;
                 console.log(this.rooms);
             });
         }
