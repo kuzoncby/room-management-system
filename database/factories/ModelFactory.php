@@ -17,10 +17,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
+        'username' => $faker->unique()->userName,
         'email' => $faker->unique()->safeEmail,
         'type' => $faker->randomElement(['A', 'S']),
         'room_id' => random_int(1, 50),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
+});
+
+$factory->define(App\Room::class, function (Faker\Generator $faker) {
+
 });

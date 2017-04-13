@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email', 64)->unique();
+            $table->string('username', 32)->unique();
             $table->string('password');
             $table->char('type', 1);
             $table->integer('room_id')->index('room_id')->unsigned();

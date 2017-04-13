@@ -19,6 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::group(['prefix' => '/json'], function () {
+    Route::get('/users', 'ApiRoomController@get_all_users');
+    Route::get('/rooms', 'ApiRoomController@get_all_rooms');
+    Route::get('/room/{room_number}', 'ApiRoomController@get_one_room');
+});
 Route::group(['prefix' => '/student'], function () {
     Route::get('/create', 'StudentController@create');
     Route::get('/{id}', 'StudentController@get');
