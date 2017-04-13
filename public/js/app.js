@@ -12168,6 +12168,8 @@
 //
 //
 //
+//
+//
 
         /* harmony default export */
         __webpack_exports__["default"] = ({
@@ -32654,26 +32656,29 @@
                     staticClass: "row"
                 }, _vm._l((_vm.rooms), function (room) {
                     return _c('div', {
-                        staticClass: "col-md-3"
+                        staticClass: "col-lg-3 col-md-4 col-sm-6 col-xs-12"
                     }, [(_vm.loading) ? _c('div', [_c('div', {
                         staticClass: "loader"
                     }), _vm._v(" "), _c('h1', [_vm._v(_vm._s(_vm.message))])]) : _c('div', [_c('div', {
                         staticClass: "well"
                     }, [_c('img', {
-                        staticClass: "img-responsive",
+                        staticClass: "center-block img-responsive",
                         attrs: {
                             "src": "http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
                         }
                     }), _vm._v(" "), _c('h2', {
-                        domProps: {
-                            "textContent": _vm._s(room.room)
-                        }
-                    }), _vm._v(" "), _c('ul', {
+                        staticClass: "text-center"
+                    }, [_vm._v(_vm._s(room.room))]), _vm._v(" "), _c('ul', {
                         staticClass: "list-group"
                     }, _vm._l((room.user), function (user) {
                         return _c('li', {
                             staticClass: "list-group-item"
-                        }, [_vm._v(_vm._s(user.name))])
+                        }, [_c('a', {
+                            staticClass: "btn btn-block",
+                            attrs: {
+                                "href": /user/ + user.username
+                            }
+                        }, [_vm._v(_vm._s(user.name))])])
                     }))])])])
                 }))])])
             }, staticRenderFns: []

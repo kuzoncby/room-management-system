@@ -2,7 +2,7 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-3" v-for="room in rooms">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" v-for="room in rooms">
                     <div v-if="loading">
                         <div class="loader"></div>
                         <h1>{{ message }}</h1>
@@ -10,10 +10,12 @@
                     <div v-else>
                         <div class="well">
                             <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
-                                 class="img-responsive">
-                            <h2 v-text="room.room"></h2>
+                                 class="center-block img-responsive">
+                            <h2 class="text-center">{{ room.room }}</h2>
                             <ul class="list-group">
-                                <li class="list-group-item" v-for="user in room.user">{{ user.name }}</li>
+                                <li class="list-group-item" v-for="user in room.user">
+                                    <a class="btn btn-block" v-bind:href="/user/ + user.username">{{ user.name }}</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

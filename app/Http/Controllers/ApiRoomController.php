@@ -13,6 +13,11 @@ class ApiRoomController extends Controller
         return User::with('room')->get();
     }
 
+    public function get_one_user(Request $request, $username)
+    {
+        return User::where('username', $username)->with('room')->first();
+    }
+
     public function get_all_rooms(Request $request)
     {
         return Room::with('user')->get();
