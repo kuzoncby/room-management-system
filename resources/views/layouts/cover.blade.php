@@ -3,14 +3,11 @@
 @include('layouts.default-header')
 <body>
 {{--<div id="app">--}}
-@include('layouts.navbar')
-{{--<div class="cover">--}}
-{{--@include('layouts.navbar')--}}
-{{--@yield('cover')--}}
-{{--</div>--}}
-<div id="app">
-    @yield('content')
+<div class="cover">
+    @include('layouts.navbar')
+    @yield('cover')
 </div>
+@yield('content')
 @include('layouts.footer')
 {{--</div>--}}
 <!-- Scripts -->

@@ -13,8 +13,10 @@ require('./material');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
+Vue.component('rooms', require('./components/rooms.vue'));
 
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
 const app = new Vue({
     el: '#app'
 });

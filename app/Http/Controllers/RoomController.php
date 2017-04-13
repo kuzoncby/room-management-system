@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
+    public function all_rooms(Request $request)
+    {
+        return view('test.rooms');
+    }
+
     public function student_filter(Request $request)
     {
         $name = $request->student;
