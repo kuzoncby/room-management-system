@@ -6,8 +6,8 @@ This is a demo base on [Laravel 5.4](https://laravel.com/), [MaraiaDB 10](https:
 
 ## Tips about project
 
-- Get all users and rooms: /users
-- Get all rooms and users: /rooms
+- Get all users and rooms: /v1/users
+- Get all rooms and users: /v1/rooms
 - All user default password is _secret_
 
 ## License
