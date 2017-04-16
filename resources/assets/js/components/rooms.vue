@@ -9,8 +9,7 @@
                     </div>
                     <div v-else>
                         <div class="well">
-                            <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
-                                 class="center-block img-responsive">
+                            <power-chart :room="room.room"></power-chart>
                             <h2 class="text-center">{{ room.room }}</h2>
                             <ul class="list-group">
                                 <li class="list-group-item" v-for="user in room.user">
@@ -39,7 +38,6 @@
             this.$http.get(url).then((response) => {
                 this.rooms = response.data;
                 this.loading = false;
-                console.log(this.rooms);
             });
         }
     }

@@ -13,7 +13,8 @@ require('./material');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example', require('./components/Example.vue'));
+Vue.component('example', require('./components/Example.vue'));
+Vue.component('power-chart', require('./components/power-chart.vue'));
 Vue.component('rooms', require('./components/rooms.vue'));
 Vue.component('room', require('./components/room.vue'));
 
