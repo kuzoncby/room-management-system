@@ -15,6 +15,7 @@ require('./material');
 
 // Vue.component('example', require('./components/Example.vue'));
 Vue.component('rooms', require('./components/rooms.vue'));
+Vue.component('room', require('./components/room.vue'));
 
 Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#token').getAttribute('content');
 const app = new Vue({

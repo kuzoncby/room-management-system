@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,7 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $students = User::where('type', 'S')->with('room')->get();
-        return view('home', compact('students'));
+        if (Auth::user()->type == 'A') {
+            return view('home');
+        } else {
+            return redirect('/user/' . Auth::user()->username);
+        }
     }
 }
