@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (!Auth::user()->status) {
+            Auth::logout();
+        }
+
         if (Auth::user()->type == 'A') {
             return view('home');
         } else {

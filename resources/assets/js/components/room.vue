@@ -8,11 +8,10 @@
                         <h1 class="text-center">载入中...</h1>
                     </div>
                     <div v-else>
-                        <power-chart :room="room.room"></power-chart>
                         <h1 class="text-center">{{ room.room }}</h1>
-                        <i class="material-icons text-info">star_rate</i>
-                        <i class="material-icons text-info">star_rate</i>
-                        <i class="material-icons text-info">star_rate</i>
+                        <power-chart :room="room.room"></power-chart>
+                        <h3 class="text-center">供电时间</h3>
+                        <h3 class="text-center text-warning">{{ room.start_shift }} - {{ room.end_shift }}</h3>
                         <table class="table table-bordered table-condensed table-hover table-striped">
                             <thead>
                             <tr>

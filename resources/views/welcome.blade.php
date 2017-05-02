@@ -72,6 +72,7 @@
                 <a href="{{ url('/home') }}">主页</a>
             @else
                 <a href="{{ url('/login') }}">登陆</a>
+                <a href="{{ url('/register') }}">新学生注册</a>
             @endif
         </div>
     @endif

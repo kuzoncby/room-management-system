@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '')
+@section('title', $user->name)
 
 {{--Section under navbar--}}
 @section('cover')
@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="jumbotron">
+                    <div class="well">
                         <h1>{{ $user->name }}</h1>
                         <table class="table table-bordered table-condensed table-hover table-striped">
                             <thead>

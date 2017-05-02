@@ -18,6 +18,11 @@ class CreateRoomTable extends Migration
             $table->integer('room')->unique();
             $table->decimal('current_power', 5, 2);
             $table->decimal('total_power', 5, 2);
+            $table->decimal('current_quota', 5, 2);
+            $table->decimal('total_quota', 5, 2);
+            $table->boolean('cut_power')->default(false);
+            $table->time('start_shift');
+            $table->time('end_shift');
         });
     }
 

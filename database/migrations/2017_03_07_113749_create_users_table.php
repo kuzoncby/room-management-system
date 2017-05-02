@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 32)->unique();
             $table->string('password');
             $table->char('type', 1);
+            $table->boolean('status')->default(true);
             $table->integer('room_id')->index('room_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();

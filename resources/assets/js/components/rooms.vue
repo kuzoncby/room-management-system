@@ -9,8 +9,10 @@
                     </div>
                     <div v-else>
                         <div class="well">
-                            <power-chart :room="room.room"></power-chart>
                             <h2 class="text-center">{{ room.room }}</h2>
+                            <power-chart :room="room.room"></power-chart>
+                            <h3 class="text-center">供电时间</h3>
+                            <h3 class="text-center text-warning">{{ room.start_shift }} - {{ room.end_shift }}</h3>
                             <ul class="list-group">
                                 <li class="list-group-item" v-for="user in room.user">
                                     <a class="btn btn-block" v-bind:href="/user/ + user.username">{{ user.name }}</a>

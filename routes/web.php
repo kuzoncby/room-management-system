@@ -29,14 +29,9 @@ Route::group(['prefix' => '/v1'], function () {
 Route::get('/user/{username}', 'StudentController@get_one_user');
 Route::get('/room/{room_number}', 'RoomController@get_one_room');
 
-//Route::group(['prefix' => '/room'], function () {
-//    Route::get('/all', 'RoomController@all_rooms');
-//});
-//Route::group(['prefix' => '/student'], function () {
-//    Route::get('/create', 'StudentController@create');
-//    Route::get('/{username}', 'StudentController@get');
-//    Route::post('/delete', 'StudentController@delete');
-//});
+Route::get('/test', function () {
+    return view('test.home');
+});
 
 Route::group(['prefix' => '/filter'], function () {
     Route::post('/name', 'FilterController@name');
