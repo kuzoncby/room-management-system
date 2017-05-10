@@ -10,6 +10,12 @@
                     <div v-else>
                         <h1 class="text-center">{{ room.room }}</h1>
                         <power-chart :room="room.room"></power-chart>
+                        <!--<button class="btn btn-block btn-primary" data-toggle="button">停止供电</button>-->
+                        <div class="togglebutton text-center">
+                            <label>
+                                <input type="checkbox" checked=""><span class="toggle"></span> 供电
+                            </label>
+                        </div>
                         <h3 class="text-center">供电时间</h3>
                         <h3 class="text-center text-warning">{{ room.start_shift }} - {{ room.end_shift }}</h3>
                         <table class="table table-bordered table-condensed table-hover table-striped">
