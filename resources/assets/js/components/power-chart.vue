@@ -20,7 +20,7 @@
                 var myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ["此时", "总和"],
+                        labels: ["此时（W）", "总和（度）"],
                         datasets: [{
                             label: '# 能量消耗',
                             data: [current, total],
