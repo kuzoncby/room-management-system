@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => '房间管理',
+    'name' => '宿舍用电管理',
 
     /*
     |--------------------------------------------------------------------------

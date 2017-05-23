@@ -26,6 +26,7 @@ Route::group(['prefix' => '/v1'], function () {
 
 Route::get('/user/{username}', 'StudentController@get_one_user');
 Route::get('/room/{room_number}', 'RoomController@get_one_room');
+Route::get('/settings', 'SettingsController@settings');
 
 Route::get('/test', function () {
     return view('test.home');

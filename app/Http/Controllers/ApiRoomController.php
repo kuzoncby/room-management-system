@@ -49,4 +49,13 @@ class ApiRoomController extends Controller
     {
         return Room::where('room', $room_number)->with('user')->first();
     }
+
+    /**
+     * @param Request $request
+     */
+    public function set_quota(Request $request)
+    {
+        $room = Room::find($request->id);   // 读取对应房间
+        $room->save($request);  // 保存到MariaDB
+    }
 }
